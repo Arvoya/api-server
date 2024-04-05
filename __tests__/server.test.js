@@ -63,7 +63,7 @@ describe("Express Server", () => {
   //BUG: NOT WORKING! SKIPPED FOR NOW
 
   it("should update a pranayama and return a status 200", async () => {
-    let response = await request.put("/api/pranayama/1", 1).send({
+    let response = await request.put("/api/pranayama/1").send({
       name: "shitali",
       sets: 2,
       rounds: 14,

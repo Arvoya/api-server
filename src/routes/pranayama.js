@@ -16,7 +16,8 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  let pranayama = await PranayamaCollection.update(req.body);
+  console.log("I AM THE PARAMS", req.params);
+  let pranayama = await PranayamaCollection.update(req.params.id, req.body);
   res.json(pranayama);
 });
 
