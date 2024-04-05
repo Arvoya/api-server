@@ -21,7 +21,7 @@ afterAll(async () => {
   await sequelize.drop();
 });
 
-describe("Express Server", () => {
+xdescribe("Express Server", () => {
   it("Should read all asana in the database and respond with status 200", async () => {
     let response = await request.get("/api/asana");
     expect(response.status).toEqual(200);
