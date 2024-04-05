@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  let pranayama = await PranayamaCollection.create();
+  let pranayama = await PranayamaCollection.create(req.body);
   res.json(pranayama);
 });
 
