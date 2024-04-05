@@ -1,16 +1,23 @@
 const express = require("express");
-const { pranayama } = require("../models/");
+const { Collection, Pranayama } = require("../models/");
 
 const router = express.Router();
 
+const PranayamaCollection = new Collection(Pranayama);
+
 router.get("/", async (req, res) => {
-  let records = await pranayama.findAll();
-  res.send(records);
+  let pranayamas = await PranayamaCollection.read();
+  res.send(pranayamas);
 });
 
 router.post("/", async (req, res) => {
-  let record = await pranayama.create(req.body);
-  res.json(record);
+  let pranayama = await PranayamaCollection.create();
+  res.json(pranayama);
+});
+
+router.put("/:id", async (req, res) => {
+  let pranayama = await PranayamaCollection.update(req.body);
+  res.json(pranayama);
 });
 
 module.exports = router;

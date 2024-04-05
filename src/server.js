@@ -1,12 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-const sqlRoute = require("./routes/sqlRouter");
+const yogiRoute = require("./routes/sqlRouter");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/api", sqlRoute);
+app.use("/api", yogiRoute);
 
 module.exports = {
   start: (port) =>
