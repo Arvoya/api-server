@@ -5,6 +5,6 @@ const pranayamaRoute = require("./pranayama.js");
 const router = express.Router();
 
 router.use("/asana", asanaRoute);
-// router.use("/pranayama", pranayamaRoute);
+router.use("/pranayama", pranayamaRoute);
 
 module.exports = router;

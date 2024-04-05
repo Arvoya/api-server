@@ -9,7 +9,6 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log("I AM THE REQUEST!", req.body);
   let record = await asana.create(req.body);
   res.json(record);
 });
