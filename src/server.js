@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const yogiRoute = require("./routes/sqlRouter");
+const yogiRoute = require("./routes/yogiRouter");
 
 const app = express();
 

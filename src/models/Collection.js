@@ -27,7 +27,7 @@ class Collection {
 
   async update(id, json) {
     try {
-      let record = await this.model.findByPK(id);
+      let record = await this.model.findByPk(id);
       let updatedRecord = await record.update(json);
       return updatedRecord;
     } catch (e) {
