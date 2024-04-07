@@ -133,3 +133,20 @@ describe("Yogi Tets", () => {
     expect(response.status).toEqual(200);
   });
 });
+
+describe("fail tests", () => {
+  it("should fail when a wrong route is tried", async () => {
+    let response = await request.get("/wrongPath");
+    expect(response.status).toEqual(404);
+    expect(response.text).toEqual("Invalid route");
+  });
+
+  it("should fail when trying to make an incorrect yogi", async () => {
+    let response = await request.post("/api/yogi/").send({
+      Name: "yo yo",
+    });
+
+    expect(response.status).toEqual(500);
+    expect(response.text).toEqual("Server Error");
+  });
+});
